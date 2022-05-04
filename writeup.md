@@ -20,8 +20,8 @@
     - **Graph & Analysis**: ![traffic violations occur each year each country](graphs/traffic_violation_eachyear_eachcountry.png)
 
 2. **Aspect Two**:
-    - **Question**: *How many offenders are under the age of 19 ?*
-    - **Graph & Analysis**: <!-- TODO: Grafik hasil analisa 1 -->
+    - **Question**: *How many offenders are between age of 16 and age of 19 ?*
+    - **Graph & Analysis**: ![offenders under age](graphs/offenders_under_age.png)
 
 3. **Aspect Three**:
     - **Question**: *What are the categories of traffic violations that occur ?*
