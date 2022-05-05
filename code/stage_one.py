@@ -100,7 +100,54 @@ def ri_offender_under_age():
 
     plt.show()
 
+def ri_category_violations():
+    # Getting the RI Traffic Stops dataset (Pandas DataFrame):
+    ri_traffic_stops = get_ri_stops_df()
+    
+     # get data under age and each country
+    subset_rtsProvidence = ri_traffic_stops[ri_traffic_stops["county_name"] == "Providence"]
+    rtsPerCountryProvidenceViolation = subset_rtsProvidence["violation"].value_counts().sort_index(ascending=True)
+
+    subset_rtsKent = ri_traffic_stops[ri_traffic_stops["county_name"] == "Kent"]
+    rtsPerCountryKentViolation = subset_rtsKent["violation"].value_counts().sort_index(ascending=True)
+
+    subset_rtsWashington = ri_traffic_stops[ri_traffic_stops["county_name"] == "Washington"]
+    rtsPerCountryWashingtonViolation = subset_rtsWashington["violation"].value_counts().sort_index(ascending=True)
+
+    subset_rtsNewport = ri_traffic_stops[ri_traffic_stops["county_name"] == "Newport"]
+    rtsPerCountryNewportViolation = subset_rtsNewport["violation"].value_counts().sort_index(ascending=True)
+
+    subset_rtsBristol = ri_traffic_stops[ri_traffic_stops["county_name"] == "Bristol"]
+    rtsPerCountryBristolViolation = subset_rtsBristol["violation"].value_counts().sort_index(ascending=True)
+
+    # print(rtsPerCountryKentViolation)
+    # get values
+    line_one_ys = [i[1] for i in rtsPerCountryProvidenceViolation.iteritems()]
+    line_two_ys = [i[1] for i in rtsPerCountryKentViolation.iteritems()]
+    line_three_ys = [i[1] for i in rtsPerCountryWashingtonViolation.iteritems()]
+    line_four_ys = [i[1] for i in rtsPerCountryNewportViolation.iteritems()]
+    line_five_ys = [i[1] for i in rtsPerCountryBristolViolation.iteritems()]
+    Xs = [f'{i[0]}' for i in rtsPerCountryProvidenceViolation.iteritems()]
+    Xs.sort()
+
+    # alright. construct our Figure and Axes (refer to lab)
+    fig, ax = plt.subplots()
+    
+    ax.plot(Xs, line_one_ys, "red")
+    ax.plot(Xs, line_two_ys, "green")
+    ax.plot(Xs, line_three_ys, "blue")
+    ax.plot(Xs, line_four_ys, "orange")
+    ax.plot(Xs, line_five_ys, "yellow")
+
+    # setting labels
+    ax.set_xlabel("Category Violation")
+    ax.set_ylabel("Violation Total")
+    ax.set_title("Categories of traffic violations that occur")
+
+    plt.show()
+
 
 if __name__ == "__main__":
     # ri_traffic_violations_each_country()
-    ri_offender_under_age()
+    # ri_offender_under_age()
+    ri_category_violations()

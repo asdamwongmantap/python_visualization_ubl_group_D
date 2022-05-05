@@ -7,7 +7,7 @@
 ### Stage 1: Data Visualization in Data Exploration
 
 0. **Aspect**:
-    - **Question**: I want to analyze the relationship between drug abuse and traffic violations.
+    - **Question**: We want to analyze the relationship between drug abuse and traffic violations.
     - **Graph & Analysis**:
         <!-- TODO: Grafik hasil analisa 1 -->
 
@@ -20,12 +20,12 @@
     - **Graph & Analysis**: ![traffic violations occur each year each country](graphs/traffic_violation_eachyear_eachcountry.png)
 
 2. **Aspect Two**:
-    - **Question**: *How many offenders are between age of 16 and age of 19 ?*
+    - **Question**: *How many offenders are between age of 16 and age of 19 each country ?*
     - **Graph & Analysis**: ![offenders under age](graphs/offenders_under_age.png)
 
 3. **Aspect Three**:
-    - **Question**: *What are the categories of traffic violations that occur ?*
-    - **Graph & Analysis**: <!-- TODO: Grafik hasil analisa 1 -->
+    - **Question**: *What are the categories of traffic violations that occur each country ?*
+    - **Graph & Analysis**: ![categories of traffic violations](graphs/category_violations.png)
 
 ------------------------------------------------------------------------------------------------------------
 
