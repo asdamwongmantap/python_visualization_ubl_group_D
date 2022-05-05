@@ -189,5 +189,36 @@ def getcurdir():
     """
     return os.path.dirname(os.path.realpath(__file__))
 
+
+def customized_ml_model_call_with_param(dataset_name,model_name,target_name,feature_names):
+    # Customized model calls
+    
+    # dataset_name = "ri_traffic_stops"
+    # model_name = "decision_tree"
+    # target_name = "is_arrested"
+    # feature_names = ["stop_duration", "driver_race", "county_fips"]
+    trained_tree, one_hot_encoder, train_df, test_df = get_trained_model(dataset_name=dataset_name,\
+                                                                        model_name=model_name,\
+                                                                        target_name=target_name,\
+                                                                        feature_names=feature_names)
+
+    # Getting the training accuracy, model's predictions and the training targets
+    training_acc, training_preds, training_targs = get_model_accuracy(model=trained_tree,\
+                                                                        df=train_df,\
+                                                                        one_hot_encoder=one_hot_encoder,\
+                                                                        dataset_name=dataset_name,\
+                                                                        target_name=target_name,\
+                                                                        feature_names=feature_names)
+
+    # You can comment/uncomment this section to print out the accuracy
+    testing_acc, testing_preds, testing_targs = get_model_accuracy(model=trained_tree,\
+                                                                    df=test_df,\
+                                                                    one_hot_encoder=one_hot_encoder,\
+                                                                    dataset_name=dataset_name,\
+                                                                    target_name=target_name,\
+                                                                    feature_names=feature_names)
+
+    return training_acc,testing_acc
+
     
     

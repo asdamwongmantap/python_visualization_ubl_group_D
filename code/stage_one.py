@@ -9,7 +9,53 @@ import pandas as pd
 # import matplotlib - very important
 import matplotlib.pyplot as plt
 
-def ri_traffic_violations_each_country():
+def ri_outcome_each_country():
+    # Getting the RI Traffic Stops dataset (Pandas DataFrame):
+    ri_traffic_stops = get_ri_stops_df()
+    
+     # get data under age and each country
+    subset_rtsProvidence = ri_traffic_stops[ri_traffic_stops["county_name"] == "Providence"]
+    rtsPerCountryProvidenceStopOutCome = subset_rtsProvidence["stop_outcome"].value_counts().sort_index(ascending=True)
+
+    subset_rtsKent = ri_traffic_stops[ri_traffic_stops["county_name"] == "Kent"]
+    rtsPerCountryKentStopOutCome = subset_rtsKent["stop_outcome"].value_counts().sort_index(ascending=True)
+
+    subset_rtsWashington = ri_traffic_stops[ri_traffic_stops["county_name"] == "Washington"]
+    rtsPerCountryWashingtonStopOutCome = subset_rtsWashington["stop_outcome"].value_counts().sort_index(ascending=True)
+
+    subset_rtsNewport = ri_traffic_stops[ri_traffic_stops["county_name"] == "Newport"]
+    rtsPerCountryNewportStopOutCome = subset_rtsNewport["stop_outcome"].value_counts().sort_index(ascending=True)
+
+    subset_rtsBristol = ri_traffic_stops[ri_traffic_stops["county_name"] == "Bristol"]
+    rtsPerCountryBristolStopOutCome = subset_rtsBristol["stop_outcome"].value_counts().sort_index(ascending=True)
+
+    # print(rtsPerCountryKentViolation)
+    # get values
+    line_one_ys = [i[1] for i in rtsPerCountryProvidenceStopOutCome.iteritems()]
+    line_two_ys = [i[1] for i in rtsPerCountryKentStopOutCome.iteritems()]
+    line_three_ys = [i[1] for i in rtsPerCountryWashingtonStopOutCome.iteritems()]
+    line_four_ys = [i[1] for i in rtsPerCountryNewportStopOutCome.iteritems()]
+    line_five_ys = [i[1] for i in rtsPerCountryBristolStopOutCome.iteritems()]
+    Xs = [f'{i[0]}' for i in rtsPerCountryProvidenceStopOutCome.iteritems()]
+    Xs.sort()
+
+    # alright. construct our Figure and Axes (refer to lab)
+    fig, ax = plt.subplots()
+    
+    ax.plot(Xs, line_one_ys, "red")
+    ax.plot(Xs, line_two_ys, "green")
+    ax.plot(Xs, line_three_ys, "blue")
+    ax.plot(Xs, line_four_ys, "orange")
+    ax.plot(Xs, line_five_ys, "yellow")
+
+    # setting labels
+    ax.set_xlabel("Stop OutCome")
+    ax.set_ylabel("OutCome Total")
+    ax.set_title("Outcome of traffic violations that occur")
+
+    plt.show()
+
+def ri_traffic_violations_year_each_country():
      # Getting the RI Traffic Stops dataset (Pandas DataFrame):
     ri_traffic_stops = get_ri_stops_df()
     
@@ -148,6 +194,7 @@ def ri_category_violations():
 
 
 if __name__ == "__main__":
-    # ri_traffic_violations_each_country()
-    # ri_offender_under_age()
+    ri_outcome_each_country()
+    ri_traffic_violations_year_each_country()
+    ri_offender_under_age()
     ri_category_violations()

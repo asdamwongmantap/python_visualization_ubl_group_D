@@ -7,13 +7,9 @@
 ### Stage 1: Data Visualization in Data Exploration
 
 0. **Aspect**:
-    - **Question**: We want to analyze the relationship between drug abuse and traffic violations.
+    - **Question**: *We want to analyze stop outcome each country*.
     - **Graph & Analysis**:
-        <!-- TODO: Grafik hasil analisa 1 -->
-
-        <!-- TODO: Grafik hasil analisa 2 (optional) -->
-
-        <!-- TODO: Hasil dari grafik yang dihasilkan ? -->
+        ![stop outcome each country](graphs/stop_outcome.png)
 
 1. **Aspect One**:
     - **Question**: *How many traffic violations occur each year each country ?*
@@ -32,22 +28,22 @@
 ### Stage 2: Data Visualization for Model Exploration
 
 1. **Aspect One**:
-    - **Question**: *Your question of choice here*
-    - **Graph & Analysis**: *Your response here, with at least one graph*
+    - **Question**: *Can the driver_gender, driver_age, and stop_duration features be used to predict is_arrested ?*
+    - **Graph & Analysis**: ![to predict is_arrested](graphs/is_arrested_predict.png)
 
 2. **Aspect Two**:
-    - **Question**: *Your question of choice here*
-    - **Graph & Analysis**: *Your response here, with at least one graph*
+    - **Question**: *Can violation, driver_race, and drug_related features be used to predict traffic_stop ?*
+    - **Graph & Analysis**: ![to predict traffic_stop](graphs/traffic_violation_predict.png)
 
 3. **Aspect Three**:
-    - **Question**: *Your question of choice here*
-    - **Graph & Analysis**: *Your response here, with at least one graph*
+    - **Question**: *Can the violation and driver_age features affect the stop_duration ?*
+    - **Graph & Analysis**: ![affect stop duration](graphs/stop_duration.png)
 
 ------------------------------------------------------------------------------------------------------------
 
 ### Stage 3: Data Visualization for *SICK* Applications (20 points)
 
-*Your geographic plot using Plotly goes here!*
+![total violation each country](graphs/geographical_plot.png)
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -56,15 +52,15 @@
 
 ------------------------------------------------------------------------------------------------------------
 
-## (20 points) Socially Responsible Computing
+## Socially Responsible Computing
 
 1.
-    - **Question**: (3 points) Please list at least three examples of accessible practices in data visualization.
-    - **Answer**: *Your answer here*
+    - **Question**: Please list at least three examples of accessible practices in data visualization ?.
+    - **Answer**: *Minimalism, Add Alt Text / Label, Label Data Directly*
                 
 
 2.
-    - **Question**: (10 points) Evaluate the accessibility of the graphs that you produced. Please refer to the specific questions on the handout.
+    - **Question**: Evaluate the accessibility of the graphs that you produced. Please refer to the specific questions on the handout.
     - **Answer**:
         *Your answer here*
 
